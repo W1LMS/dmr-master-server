@@ -1,0 +1,9 @@
+[Unit]
+Description=DMR Master Server
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/HBlink3/bridge.py
+
+[Install]
+WantedBy=multi-user.target
