@@ -2,9 +2,9 @@ language: shell
 dist: stretch
 
 before_install:
-  - sudo apt update
-  - sudo apt install -y git python3.5
-  - sudo pip install --upgrade pip
+  - sudo -H apt update
+  - sudo -H apt install -y git python3.5
+  - sudo -H python3 -m pip install --upgrade pip
 
 deploy:
   provider: script
