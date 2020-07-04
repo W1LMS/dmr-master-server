@@ -38,5 +38,5 @@ Once everything is running smoothly, you can enable and start the service by typ
 ### DMR Master Server: Part 6 - Configure MMDVM Hotspot
 [![WB4ULK's HBlink3 Guide](http://img.youtube.com/vi/UbnBSXWlHPQ/0.jpg)](http://www.youtube.com/watch?v=iIAMXdVAM84 "WB4ULK's HBlink3 Guide")
 
-### DMR Master Server: Part 7 - Adjust Logging Level, Part 7
+### DMR Master Server: Part 7 - Adjust Logging Level
 [![WB4ULK's HBlink3 Guide](http://img.youtube.com/vi/UbnBSXWlHPQ/0.jpg)](http://www.youtube.com/watch?v=7QLyD6IVYjQ "WB4ULK's HBlink3 Guide")
