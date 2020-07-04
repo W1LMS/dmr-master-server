@@ -22,7 +22,7 @@ Once everything is running smoothly, you can enable and start the service by typ
     sudo systemctl enable hblink
     sudo systemctl start hblink
 
-For help with this, you can visit [WB4ULK's website](http://www.chrishoodblog.com/make-your-own-dmr-server/) or watch his YouTube videos below.
+For help with this, visit [DVSwitch on Groups.io](https://dvswitch.groups.io/). There is a wealth of information on this and other related software. You can also visit [WB4ULK's website](http://www.chrishoodblog.com/make-your-own-dmr-server/) or watch his YouTube videos below.
 
 ### DMR Master Server: Part 3 - Configure hblink.cfg
 [![WB4ULK's HBlink3 Guide](http://img.youtube.com/vi/oXRCW-5JMws/0.jpg)](http://www.youtube.com/watch?v=oXRCW-5JMws "WB4ULK's HBlink3 Guide")
