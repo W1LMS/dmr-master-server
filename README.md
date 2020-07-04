@@ -6,12 +6,12 @@ You will need to install git to download this repository by typing:
 
     sudo apt install -y git
     
-To download and install the software, I recommend running the following command from a sub-folder in your home directory (i.e.`~/Downloads`), or the `/tmp` folder:
+To download and install the software, I recommend running the following commands as root:
 
     git clone https://github.com/W1LMS/dmr-master-server.git
     cd dmr-master-server
     chmod +x ./install.sh
-    sudo ./install.sh
+    ./install.sh
 
 You should find yourself in the `/opt/HBlink3` folder when it is done. Prior to launching, you will need to edit the files `hblink.cfg` and `rules.py` contained within that folder. You may want to leave the `LOG_LEVEL` to `DEBUG` for the most verbose messages until you have confirmed everything is working well. When you're ready to go live, change it to `INFO` to receive just the relevant messages. 
 
