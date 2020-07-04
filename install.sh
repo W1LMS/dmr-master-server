@@ -19,4 +19,4 @@ apt update
 
 clear
 
-printf "\e[1;33mEdit hblink.cfg and rules.py. Once done, test it out by typing:\e[0m\n\t\e[1;36mpython3 bridge.py\e[0m\n\n\e[1;33mIf all goes well, you can enable and start the service by typing:\e[0m\n\t\e[1;36msystemctl enable hblink\e[0m\n\t\e[1;36msystemctl start hblink\e[0m\n\n"
+printf "\e[0m\e[1;33mEdit hblink.cfg and rules.py. Once done, test it out by typing:\e[0m\n\t\e[1;36mpython3 bridge.py\e[0m\n\n\e[1;33mIf all goes well, you can enable and start the service by typing:\e[0m\n\t\e[1;36msystemctl enable hblink\e[0m\n\t\e[1;36msystemctl start hblink\e[0m\n\n"
