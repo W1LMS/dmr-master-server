@@ -6,7 +6,7 @@ You will need to install git to download this repository by typing:
 
     sudo apt install -y git
     
-To download and install the software, I recommend running the following command from a sub-folder in your home directory (i.e.`~/Downloads`), or `/tmp`:
+To download and install the software, I recommend running the following command from a sub-folder in your home directory (i.e.`~/Downloads`), or the `/tmp` folder:
 
     git clone https://github.com/W1LMS/dmr-master-server.git
     cd dmr-master-server
