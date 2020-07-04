@@ -4,8 +4,8 @@ dist: stretch
 before_install:
   - sudo -H apt update
   - sudo -H apt install -y python3.5 python3-pip python3-dev python3-setuptools
-  - sudo -H python3 pip install --upgrade pip
-  - sudo -H python3 pip install wheel
+  - sudo -H pip3 install --upgrade pip
+  - sudo -H pip3 install wheel
 
 deploy:
   provider: script
