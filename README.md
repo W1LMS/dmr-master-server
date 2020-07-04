@@ -14,7 +14,7 @@ To download and install the software, I recommend running the following commands
     cd dmr-master-server
     . ./install.sh ## Note the space between the periods
 
-Go to the `/opt/HBlink3` folder when it is done. You will need to edit the files `hblink.cfg` and `rules.py` contained within that folder. You may want to leave the `LOG_LEVEL` to `DEBUG` for the most verbose messages until you have confirmed everything is working well. When you're ready to go live, change it to `INFO` to receive just the relevant messages. 
+You should end up in the `/opt/HBlink3` folder when it is done. You will need to edit the files `hblink.cfg` and `rules.py` contained within that folder. You may want to leave the `LOG_LEVEL` to `DEBUG` for the most verbose messages until you have confirmed everything is working well. When you're ready to go live, change it to `INFO` to receive just the relevant messages. 
 
 For help with this, visit [DVSwitch on Groups.io](https://dvswitch.groups.io/). There is a wealth of information on this and other related software. You can also visit [WB4ULK's website](http://www.chrishoodblog.com/make-your-own-dmr-server/) or watch his YouTube videos below as this script is based on his guide.
 
