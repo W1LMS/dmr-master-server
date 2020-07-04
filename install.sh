@@ -1,7 +1,10 @@
 #!/bin/bash
 
 apt update && apt upgrade -y
-apt install -y python3-twisted
+apt install -y python3.5 python3-pip python3-dev python3-setuptools python3-twisted
+
+python3 -m pip install --upgrade pip
+python3 -m pip install wheel
 
 cp -r ./n0mjs710/* /opt/
 cp -r ./systemd/hblink.service /lib/systemd/system/
