@@ -6,8 +6,8 @@ This script automates the installation for 2 of N0MJS' repositories: [dmr_utils3
     
 I recommend running the following command from a sub-folder in your home directory (i.e.`~/Downloads`), or `/tmp`, to download and install:
 
-    git clone url
-    cd url
+    git clone https://github.com/W1LMS/dmr-master-server.git
+    cd dmr-master-server
     chmod +x ./install.sh
     sudo ./install.sh
 
