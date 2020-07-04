@@ -1,0 +1,13 @@
+language: shell
+dist: stretch
+
+before_install:
+  - sudo apt update
+  - sudo apt upgrade
+  - sudo apt install git
+
+deploy:
+  provider: script
+  script: sudo bash ./install.sh
+  on:
+    branch: master
