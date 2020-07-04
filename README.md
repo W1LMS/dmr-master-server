@@ -13,7 +13,11 @@ To download and install the software, I recommend running the following command 
     chmod +x ./install.sh
     sudo ./install.sh
 
-You should find yourself in the `/opt/HBlink3` folder when it is done. You will need to edit the files `hblink.cfg` and `rules.py` in that folder prior to launching. To launch, type: 
+You should find yourself in the `/opt/HBlink3` folder when it is done. You will need to edit the files `hblink.cfg` and `rules.py` in that folder prior to launching. You may want to leave the `LOG_LEVEL` to `DEBUG` for the most verbose messages until you have confirmed everything is working well. When you're ready to go live, change it to `INFO` to receive just the relevant messages. 
+
+For help with this, visit [DVSwitch on Groups.io](https://dvswitch.groups.io/). There is a wealth of information on this and other related software. You can also visit [WB4ULK's website](http://www.chrishoodblog.com/make-your-own-dmr-server/) or watch his YouTube videos below as this script is based on his guide.
+
+To launch, type: 
 
     python3 bridge.py 
     
@@ -21,8 +25,6 @@ Once everything is running smoothly, you can enable and start the service by typ
 
     sudo systemctl enable hblink
     sudo systemctl start hblink
-
-For help with this, visit [DVSwitch on Groups.io](https://dvswitch.groups.io/). There is a wealth of information on this and other related software. You can also visit [WB4ULK's website](http://www.chrishoodblog.com/make-your-own-dmr-server/) or watch his YouTube videos below.
 
 ### DMR Master Server: Part 3 - Configure hblink.cfg
 [![WB4ULK's HBlink3 Guide](http://img.youtube.com/vi/oXRCW-5JMws/0.jpg)](http://www.youtube.com/watch?v=oXRCW-5JMws "WB4ULK's HBlink3 Guide")
