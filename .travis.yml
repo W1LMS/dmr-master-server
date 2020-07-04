@@ -7,6 +7,6 @@ before_install:
 
 deploy:
   provider: script
-  script: sudo bash ./install.sh
+  script: sudo -H bash ./install.sh
   on:
     branch: master
