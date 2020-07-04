@@ -15,8 +15,12 @@ cd /opt/HBlink3
 cp hblink-SAMPLE.cfg hblink.cfg
 cp rules_SAMPLE.py rules.py
 
-echo "Edit hblink.cfg and rules.py. Once done, test it out by typing:"
-echo "python3 bridge.py"
-echo "If all goes well, you can enable and start the service by typing:"
-echo "systemctl enable hblink"
-echo "systemctl start hblink"
+apt update
+
+clear
+
+printf "Edit hblink.cfg and rules.py. Once done, test it out by typing:\n"
+printf "    python3 bridge.py\n"
+printf "\nIf all goes well, you can enable and start the service by typing:\n"
+printf "    systemctl enable hblink\n"
+printf "    systemctl start hblink\n"
