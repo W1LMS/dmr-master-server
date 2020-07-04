@@ -12,8 +12,7 @@ To download and install the software, I recommend running the following commands
 
     git clone https://github.com/W1LMS/dmr-master-server.git
     cd dmr-master-server
-    chmod +x ./install.sh
-    ./install.sh
+    . ./install.sh # Note the space between the periods
 
 Go to the `/opt/HBlink3` folder when it is done. You will need to edit the files `hblink.cfg` and `rules.py` contained within that folder. You may want to leave the `LOG_LEVEL` to `DEBUG` for the most verbose messages until you have confirmed everything is working well. When you're ready to go live, change it to `INFO` to receive just the relevant messages. 
 
