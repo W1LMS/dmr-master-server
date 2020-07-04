@@ -1,5 +1,7 @@
 # dmr-master-server
 
+[![Build Status](https://travis-ci.com/W1LMS/dmr-master-server.svg?branch=master)](https://travis-ci.com/W1LMS/dmr-master-server)
+
 This script automates the installation for 2 of N0MJS' repositories: [dmr_utils3](https://github.com/n0mjs710/dmr_utils3) and [HBlink3](https://github.com/n0mjs710/hblink3). The script has been tested on a fresh Debian 9 install of a VPS. It will perform an apt update and upgrade, install python-twisted, and install dmr_utils3 & HBlink3. It also includes the systemd file to run as a service.
 
 You will need to install git to download this repository by typing:
