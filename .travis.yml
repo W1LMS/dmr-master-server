@@ -3,8 +3,7 @@ dist: stretch
 
 before_install:
   - sudo -H apt update
-  - sudo -H apt install -y git python3.5 python3-pip
-  - sudo -H pip3 install --upgrade pip
+  - sudo -H apt install -y git python3.5 python3-pip python3-setuptools
 
 deploy:
   provider: script
