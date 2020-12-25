@@ -37,8 +37,11 @@ To launch, type:
 Once everything is running smoothly, you can enable and start the service by typing:
 
     sudo systemctl enable hblink
-    sudo systemctl start hblink
 
+Then reboot your device. You can monitor the logs by typing:
+
+    tail -f /tmp/hblink.log
+    
 ### DMR Master Server: Part 3 - Configure hblink.cfg
 [![WB4ULK's HBlink3 Guide](http://img.youtube.com/vi/oXRCW-5JMws/0.jpg)](http://www.youtube.com/watch?v=oXRCW-5JMws "WB4ULK's HBlink3 Guide")
 
