@@ -1,7 +1,7 @@
 #!/bin/bash
 
-subscribers=$(</opt/HBlink3/lab/subscribers) #DMR ID of end users (7 digits)       ##Sample content: 1107010,3161013,
-registrants=$(</opt/HBlink3/lab/registrants) #DMR ID + SSID of hotspots (9 digits) ##Sample content: 110701001-110701099,316101301-316101399,
+subscribers=$(</opt/HBlink3/lab/subscribers) #DMR ID of end users (7 digits)        ##Sample content: 1107010,3161013,
+registrants=$(</opt/HBlink3/lab/registrants) #DMR ID + SSID of hotspots (9 digits)  ##Sample content: 110701001-110701099,316101301-316101399,
 
 if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID is valid from RadioID.net download
   then
