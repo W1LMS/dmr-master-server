@@ -15,13 +15,13 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
         cat > /opt/HBlink3/lab/subscribers <<- EOF
         $newSubs
         EOF
-
-      if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR was added successfully
-        then
-          printf "\n\033[32;1mDMR ID added to the subscriber file sucessfully\033[0m\n\n"
-        else
-          printf "\n\033[31;1mThere was a problem adding the DMR ID to the subscribers file\033[0m\n\n"
-        fi
+      
+        if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR was added successfully
+          then
+            printf "\n\033[32;1mDMR ID added to the subscriber file sucessfully\033[0m\n\n"
+          else
+            printf "\n\033[31;1mThere was a problem adding the DMR ID to the subscribers file\033[0m\n\n"
+          fi
 
       fi
 
@@ -34,12 +34,12 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
         $newRegs
         EOF
 
-      if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID was added successfully
-        then
-          printf "\n\033[32;1mDMR ID + SSID added to the registrants file sucessfully\033[0m\n\n"
-        else
-          printf "\n\033[31;1mThere was a problem adding the DMR ID + SSID to the registrants file\033[0m\n\n"
-        fi
+        if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID was added successfully
+          then
+            printf "\n\033[32;1mDMR ID + SSID added to the registrants file sucessfully\033[0m\n\n"
+          else
+            printf "\n\033[31;1mThere was a problem adding the DMR ID + SSID to the registrants file\033[0m\n\n"
+          fi
 
       fi
 
