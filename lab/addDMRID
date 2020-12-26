@@ -2,11 +2,11 @@
 
 subsFile="/opt/HBlink3/lab/subscribers" #DMR ID of end users (7 digits)        ##Sample content: 1107010,3161013,
 regsFile="/opt/HBlink3/lab/registrants" #DMR ID + SSID of hotspots (9 digits)  ##Sample content: 110701001-110701099,316101301-316101399,
-usersRadioID="/opt/HBlink3/subscriber_ids.json"
+usersRadioIDFile="/opt/HBlink3/subscriber_ids.json"
 subscribers=$(<$subsFile) 
 registrants=$(<$regsFile) 
 
-if grep -q "$1" "$usersRadioID" #Checks to make sure DMR ID is valid from RadioID.net download
+if grep -q "$1" "$usersRadioIDFile" #Checks to make sure DMR ID is valid from RadioID.net download
   then
     printf "\n\033[32;1mDMR ID found valid\033[0m\n\n"
 
