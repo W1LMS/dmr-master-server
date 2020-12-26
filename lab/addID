@@ -1,13 +1,13 @@
 #!/bin/bash
 
-subscribers=$(</opt/HBlink3/lab/subscribers)
-registrants=$(</opt/HBlink3/lab/registrants)
+subscribers=$(</opt/HBlink3/lab/subscribers) #DMR ID of end users (7 digits)       ##Sample content: 1107010,3161013,
+registrants=$(</opt/HBlink3/lab/registrants) #DMR ID + SSID of hotspots (9 digits) ##Sample content: 110701001-110701099,316101301-316101399,
 
-if grep -q "$1" "/opt/HBlink3/subscriber_ids.json"
+if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID is valid from RadioID.net download
   then
     printf "\n\033[32;1mDMR ID found valid\033[0m\n\n"
 
-    if grep -q "$1" "/opt/HBlink3/lab/subscribers"
+    if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR ID does not already exist in the subscriber file before adding
       then
         printf "\n\033[31;1mDMR ID already exists in subscribers file\033[0m\n\n"
       else
@@ -16,16 +16,16 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json"
         $newSubs
         EOF
 
-      if grep -q "$1" "/opt/HBlink3/lab/subscribers"
+      if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR was added successfully
         then
-          printf "\n\033[32;1mDMR Subscriber added to the subscriber file sucessfully\033[0m\n\n"
+          printf "\n\033[32;1mDMR ID added to the subscriber file sucessfully\033[0m\n\n"
         else
           printf "\n\033[31;1mThere was a problem adding the DMR ID to the subscribers file\033[0m\n\n"
         fi
 
       fi
 
-    if grep -q "$101-$199" "/opt/HBlink3/lab/registrants"
+    if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID does not already exist in the registrants file before adding
       then
         printf "\n\033[31;1mDMR ID already exists in registrants file\033[0m\n\n"
       else
@@ -34,11 +34,11 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json"
         $newRegs
         EOF
 
-      if grep -q "$101-$199" "/opt/HBlink3/lab/registrants"
+      if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID was added successfully
         then
-          printf "\n\033[32;1mDMR Subscriber added to the registrants file sucessfully\033[0m\n\n"
+          printf "\n\033[32;1mDMR ID + SSID added to the registrants file sucessfully\033[0m\n\n"
         else
-          printf "\n\033[31;1mThere was a problem adding the DMR ID to the registrants file\033[0m\n\n"
+          printf "\n\033[31;1mThere was a problem adding the DMR ID + SSID to the registrants file\033[0m\n\n"
         fi
 
       fi
