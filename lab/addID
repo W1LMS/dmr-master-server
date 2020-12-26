@@ -1,1 +1,48 @@
+#!/bin/bash
 
+subscribers=$(</opt/HBlink3/lab/subscribers)
+registrants=$(</opt/HBlink3/lab/registrants)
+
+if grep -q "$1" "/opt/HBlink3/subscriber_ids.json"
+  then
+    printf "\n\033[32;1mDMR ID found valid\033[0m\n\n"
+
+    if grep -q "$1" "/opt/HBlink3/lab/subscribers"
+      then
+        printf "\n\033[31;1mDMR ID already exists in subscribers file\033[0m\n\n"
+      else
+        newSubs="$subscribers$1,"
+        cat > /opt/HBlink3/lab/subscribers <<- EOF
+        $newSubs
+        EOF
+
+      if grep -q "$1" "/opt/HBlink3/lab/subscribers"
+        then
+          printf "\n\033[32;1mDMR Subscriber added to the subscriber file sucessfully\033[0m\n\n"
+        else
+          printf "\n\033[31;1mThere was a problem adding the DMR ID to the subscribers file\033[0m\n\n"
+        fi
+
+      fi
+
+    if grep -q "$101-$199" "/opt/HBlink3/lab/registrants"
+      then
+        printf "\n\033[31;1mDMR ID already exists in registrants file\033[0m\n\n"
+      else
+        newRegs="$registrants$101-$199,"
+        cat > /opt/HBlink3/lab/registrants <<- EOF
+        $newRegs
+        EOF
+
+      if grep -q "$101-$199" "/opt/HBlink3/lab/registrants"
+        then
+          printf "\n\033[32;1mDMR Subscriber added to the registrants file sucessfully\033[0m\n\n"
+        else
+          printf "\n\033[31;1mThere was a problem adding the DMR ID to the registrants file\033[0m\n\n"
+        fi
+
+      fi
+
+  else
+    printf "\n\033[31;1mDMR ID not found\033[0m\n\n"
+  fi
