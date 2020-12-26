@@ -13,8 +13,8 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
       else
         newSubs="$subscribers$1,"
         cat > /opt/HBlink3/lab/subscribers <<- EOF
-        $newSubs
-        EOF
+          $newSubs
+          EOF
       
         if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR was added successfully
           then
