@@ -43,7 +43,7 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
 
       fi
       
-    if grep -q "$1" "/opt/HBlink3/lab/subscribers" && grep -q "$101-$199" "/opt/HBlink3/lab/registrants"
+    if grep -q "$1" "/opt/HBlink3/lab/subscribers" && grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Reminds user to restart service on successful update
       then
         printf "\e[0m\e[1;33mFor changes to take effect, please restart hblink.service by typing:\e[0m\n\t\e[1;36msystemctl restart hblink.service\e[0m\n\n"
       fi
