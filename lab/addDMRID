@@ -1,22 +1,25 @@
 #!/bin/bash
 
-subscribers=$(</opt/HBlink3/lab/subscribers) #DMR ID of end users (7 digits)        ##Sample content: 1107010,3161013,
-registrants=$(</opt/HBlink3/lab/registrants) #DMR ID + SSID of hotspots (9 digits)  ##Sample content: 110701001-110701099,316101301-316101399,
+subsFile="/opt/HBlink3/lab/subscribers" #DMR ID of end users (7 digits)        ##Sample content: 1107010,3161013,
+regsFile="/opt/HBlink3/lab/registrants" #DMR ID + SSID of hotspots (9 digits)  ##Sample content: 110701001-110701099,316101301-316101399,
+usersRadioID="/opt/HBlink3/subscriber_ids.json"
+subscribers=$(<$subsFile) 
+registrants=$(<$regsFile) 
 
-if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID is valid from RadioID.net download
+if grep -q "$1" "$usersRadioID" #Checks to make sure DMR ID is valid from RadioID.net download
   then
     printf "\n\033[32;1mDMR ID found valid\033[0m\n\n"
 
-    if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR ID does not already exist in the subscriber file before adding
+    if grep -q "$1" "$subsFile" #Checks to make sure the DMR ID does not already exist in the subscriber file before adding
       then
         printf "\n\033[31;1mDMR ID already exists in subscribers file\033[0m\n\n"
       else
         newSubs="$subscribers$1,"
-        cat > /opt/HBlink3/lab/subscribers <<- EOF
+        cat > $subsFile <<- EOF
           $newSubs
           EOF
       
-        if grep -q "$1" "/opt/HBlink3/lab/subscribers" #Checks to make sure the DMR was added successfully
+        if grep -q "$1" "$subsFile" #Checks to make sure the DMR was added successfully
           then
             printf "\n\033[32;1mDMR ID added to the subscriber file sucessfully\033[0m\n\n"
           else
@@ -25,16 +28,16 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
 
       fi
 
-    if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID does not already exist in the registrants file before adding
+    if grep -q "$101-$199" "$regsFile" #Checks to make sure DMR ID + SSID does not already exist in the registrants file before adding
       then
         printf "\n\033[31;1mDMR ID already exists in registrants file\033[0m\n\n"
       else
         newRegs="$registrants$101-$199,"
-        cat > /opt/HBlink3/lab/registrants <<- EOF
+        cat > $regsFile <<- EOF
         $newRegs
         EOF
 
-        if grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Checks to make sure DMR ID + SSID was added successfully
+        if grep -q "$101-$199" "$regsFile" #Checks to make sure DMR ID + SSID was added successfully
           then
             printf "\n\033[32;1mDMR ID + SSID added to the registrants file sucessfully\033[0m\n\n"
           else
@@ -43,7 +46,7 @@ if grep -q "$1" "/opt/HBlink3/subscriber_ids.json" #Checks to make sure DMR ID i
 
       fi
       
-    if grep -q "$1" "/opt/HBlink3/lab/subscribers" && grep -q "$101-$199" "/opt/HBlink3/lab/registrants" #Reminds user to restart service on successful update
+    if grep -q "$1" "$subsFile" && grep -q "$101-$199" "$regsFile" #Reminds user to restart service on successful update
       then
         printf "\e[0m\e[1;33mFor changes to take effect, please restart hblink.service by typing:\e[0m\n\t\e[1;36msystemctl restart hblink.service\e[0m\n\n"
       fi
