@@ -64,6 +64,7 @@ if grep -q "$1" "$usersRadioIDFile" #Checks to make sure DMR ID is valid from Ra
       1)
         printf "\n\033[31;1mDownloading DMR ID List\033[0m\n\n"
         wget https://database.radioid.net/static/users.json -O $usersRadioIDFile
+	sleep 5
         ;;
       2)
         printf "\n\033[31;1mDMR ID not found\033[0m\n\n"
